@@ -1,10 +1,13 @@
 import "./styles.css";
 
+import { useState } from "react";
+
 export default function App() {
-  let isActive = false;
+  const [isActive, setIsActive] = useState(false);
+  //let isActive = false;
 
   function handleClick() {
-    isActive = !isActive;
+    setIsActive(!isActive);
     // Check that the value changes correctly.
     console.log(isActive);
   }
@@ -12,7 +15,12 @@ export default function App() {
   return (
     <main>
       <div className={`box ${isActive ? "box--active" : ""}`} />
-      <button onClick={handleClick}>Activate</button>
+      <button onClick={handleClick}>
+        {isActive ? "Activate" : "Deactivate"}
+      </button>
     </main>
   );
 }
+
+//Can you use your newly created state to toggle the text on the button itself between
+//"Activate" and "Deactivate"?
