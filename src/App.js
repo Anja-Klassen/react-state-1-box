@@ -16,11 +16,8 @@ export default function App() {
     <main>
       <div className={`box ${isActive ? "box--active" : ""}`} />
       <button onClick={handleClick}>
-        {isActive ? "Activate" : "Deactivate"}
+        {isActive ? "Deactive" : "Activate"}
       </button>
     </main>
   );
 }
-
-//Can you use your newly created state to toggle the text on the button itself between
-//"Activate" and "Deactivate"?
